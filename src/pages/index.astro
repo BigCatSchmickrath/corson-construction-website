@@ -1,0 +1,203 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { projects } from '@/data/projects';
+
+const featuredProjects = projects.slice(0, 4);
+const reviews = [
+  {
+    name: 'John Smith',
+    rating: 5,
+    text: 'Excellent work on our kitchen remodel. The team was professional and finished on schedule.',
+  },
+  {
+    name: 'Sarah Johnson',
+    rating: 5,
+    text: 'Our new deck looks amazing! Highly recommend Corson Construction for any project.',
+  },
+  {
+    name: 'Mike Davis',
+    rating: 5,
+    text: 'Top-notch roofing service. They fixed our storm damage quickly and thoroughly.',
+  },
+];
+
+const serviceAreas = [
+  'Gardner',
+  'Olathe',
+  'Overland Park',
+  'Leawood',
+  'Lenexa',
+  'Spring Hill',
+  'Stilwell',
+  'De Soto',
+  'Edgerton',
+];
+---
+
+<Layout title="Corson Construction & Roofing | Kansas Roofing & Remodeling Services">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-ccr-light to-white py-16 sm:py-24 px-4 sm:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Logo with Glow Effect -->
+      <div class="mb-8 flex justify-center">
+        <div class="relative">
+          <div class="absolute inset-0 bg-ccr-blue opacity-20 blur-xl rounded-full" style="width: 120px; height: 120px; left: 50%; top: 50%; transform: translate(-50%, -50%)"></div>
+          <img src="/logo.svg" alt="CCR Logo" class="h-32 w-32 relative z-10 mx-auto" />
+        </div>
+      </div>
+
+      <!-- Tracked Out Headline -->
+      <h1 class="text-4xl sm:text-6xl font-black text-ccr-navy mb-2 tracking-widest">
+        CORSON CONSTRUCTION & ROOFING
+      </h1>
+
+      <!-- Gold Separator -->
+      <div class="flex justify-center gap-2 mb-6">
+        <div class="w-2 h-2 bg-ccr-gold rounded-sharp"></div>
+        <div class="w-2 h-2 bg-ccr-gold rounded-sharp"></div>
+        <div class="w-2 h-2 bg-ccr-gold rounded-sharp"></div>
+      </div>
+
+      <!-- Main Tagline -->
+      <h2 class="text-2xl sm:text-3xl font-bold text-ccr-navy mb-6">Quality Construction / You Can Count On</h2>
+
+      <!-- Description -->
+      <p class="text-lg text-ccr-gray mb-8 max-w-2xl mx-auto">
+        With over 20 years of family-owned expertise, we deliver exceptional roofing, remodeling, and construction services throughout Johnson County, Kansas. Licensed, insured, and committed to excellence.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a
+          href="/contact"
+          class="px-8 py-3 bg-ccr-blue text-white font-bold hover:bg-ccr-navy transition text-lg"
+          style={{ borderRadius: '2px' }}
+        >
+          Get Free Estimate
+        </a>
+        <a
+          href="tel:9132083171"
+          class="px-8 py-3 border-2 border-ccr-blue text-ccr-blue font-bold hover:bg-ccr-blue hover:text-white transition text-lg"
+          style={{ borderRadius: '2px' }}
+        >
+          Call: 913-208-3171
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-white p-4 rounded-sharp border border-ccr-light">
+          <div class="text-sm font-semibold text-ccr-blue mb-1">✓</div>
+          <div class="text-xs font-bold text-ccr-navy">Licensed & Insured</div>
+        </div>
+        <div class="bg-white p-4 rounded-sharp border border-ccr-light">
+          <div class="text-sm font-semibold text-ccr-blue mb-1">★</div>
+          <div class="text-xs font-bold text-ccr-navy">Family Owned</div>
+        </div>
+        <div class="bg-white p-4 rounded-sharp border border-ccr-light">
+          <div class="text-sm font-semibold text-ccr-gold mb-1">4.4</div>
+          <div class="text-xs font-bold text-ccr-navy">Google Rating</div>
+        </div>
+        <div class="bg-white p-4 rounded-sharp border border-ccr-light">
+          <div class="text-sm font-semibold text-ccr-blue mb-1">20+</div>
+          <div class="text-xs font-bold text-ccr-navy">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Preview Section -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-ccr-navy mb-4">Our Work</h2>
+        <p class="text-lg text-ccr-gray max-w-2xl mx-auto">
+          From roofing to remodeling, we take pride in every project. See why homeowners in Johnson County trust Corson Construction.
+        </p>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        {
+          featuredProjects.map((project) => (
+            <a
+              href="/gallery"
+              class="group relative overflow-hidden rounded-sharp border border-ccr-light hover:border-ccr-blue transition"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-60 transition duration-300"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                <div class="text-ccr-gold text-sm font-semibold">{project.category}</div>
+                <h3 class="text-white font-bold text-lg">{project.title}</h3>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- View All Button -->
+      <div class="text-center">
+        <a
+          href="/gallery"
+          class="inline-block px-8 py-3 bg-ccr-light text-ccr-blue font-bold hover:bg-ccr-blue hover:text-white transition text-lg"
+          style={{ borderRadius: '2px' }}
+        >
+          View All Projects →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-ccr-light">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-ccr-navy mb-4">What Our Customers Say</h2>
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <div class="flex gap-1">
+            {[1, 2, 3, 4, 5].map(() => (
+              <span class="text-ccr-gold text-xl">★</span>
+            ))}
+          </div>
+          <span class="text-lg font-bold text-ccr-navy">4.4 Google Rating</span>
+        </div>
+      </div>
+
+      <!-- Review Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          reviews.map((review) => (
+            <div class="bg-white p-6 rounded-sharp border border-ccr-light hover:shadow-md transition">
+              <div class="flex gap-1 mb-4">
+                {[...Array(review.rating)].map(() => (
+                  <span class="text-ccr-gold text-lg">★</span>
+                ))}
+              </div>
+              <p class="text-ccr-gray mb-4 leading-relaxed">"{review.text}"</p>
+              <p class="font-bold text-ccr-navy">{review.name}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Area Banner -->
+  <section class="py-16 sm:py-20 px-4 sm:px-8 bg-ccr-navy text-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-8">Serving Johnson County & Beyond</h2>
+      <div class="flex flex-wrap justify-center items-center gap-3 text-lg font-medium">
+        {serviceAreas.map((area, index) => (
+          <>
+            <span>{area}</span>
+            {index < serviceAreas.length - 1 && <span class="text-ccr-gold text-2xl">•</span>}
+          </>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

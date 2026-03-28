@@ -1,0 +1,32 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { GalleryGrid } from '@/components/GalleryGrid';
+---
+
+<Layout title="Gallery | Corson Construction & Roofing">
+  <!-- Page Hero Banner -->
+  <section class="bg-ccr-navy text-white py-12 px-4 sm:px-8">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Our Work</h1>
+      <div class="flex items-center gap-2 text-sm">
+        <a href="/" class="hover:text-ccr-gold transition">Home</a>
+        <span class="text-ccr-gold">/</span>
+        <span class="text-ccr-light">Gallery</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-lg text-ccr-gray max-w-2xl mx-auto">
+          Explore our portfolio of completed projects. Click any image to learn more about the details, materials, and craftsmanship that went into each renovation.
+        </p>
+      </div>
+
+      {/* Gallery Grid Component */}
+      <GalleryGrid client:visible />
+    </div>
+  </section>
+</Layout>

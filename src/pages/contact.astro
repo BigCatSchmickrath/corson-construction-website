@@ -1,0 +1,186 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Contact | Corson Construction & Roofing">
+  <!-- Page Hero Banner -->
+  <section class="bg-ccr-navy text-white py-12 px-4 sm:px-8">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Get In Touch</h1>
+      <div class="flex items-center gap-2 text-sm">
+        <a href="/" class="hover:text-ccr-gold transition">Home</a>
+        <span class="text-ccr-gold">/</span>
+        <span class="text-ccr-light">Contact</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Contact Form -->
+        <div class="lg:col-span-2">
+          <div class="mb-8">
+            <h2 class="text-3xl font-bold text-ccr-navy mb-2">Send us a Message</h2>
+            <p class="text-ccr-gray">We'll get back to you within 24 hours. All fields marked with * are required.</p>
+          </div>
+
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            action="/thank-you"
+            class="space-y-6"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+
+            <!-- Honeypot field (hidden from users) -->
+            <input type="hidden" name="bot-field" />
+
+            <!-- Name -->
+            <div>
+              <label for="name" class="block text-sm font-semibold text-ccr-navy mb-2">
+                Full Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition"
+                placeholder="John Smith"
+              />
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-ccr-navy mb-2">
+                Phone Number *
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition"
+                placeholder="913-208-3171"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm font-semibold text-ccr-navy mb-2">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition"
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <!-- Service Dropdown -->
+            <div>
+              <label for="service" class="block text-sm font-semibold text-ccr-navy mb-2">
+                Service of Interest
+              </label>
+              <select
+                id="service"
+                name="service"
+                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition"
+              >
+                <option value="">-- Select a Service --</option>
+                <option value="Roofing">Roofing</option>
+                <option value="Kitchen Remodeling">Kitchen Remodeling</option>
+                <option value="Bathroom Remodeling">Bathroom Remodeling</option>
+                <option value="Decks & Patios">Decks & Patios</option>
+                <option value="Basement Finishing">Basement Finishing</option>
+                <option value="Concrete & Fencing">Concrete & Fencing</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm font-semibold text-ccr-navy mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition resize-none"
+                placeholder="Tell us about your project..."
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="w-full px-8 py-3 bg-ccr-blue text-white font-bold hover:bg-ccr-navy transition text-lg"
+              style={{ borderRadius: '2px' }}
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info Sidebar -->
+        <div class="lg:col-span-1">
+          <!-- Contact Cards -->
+          <div class="space-y-6 mb-8">
+            <!-- Phone Card -->
+            <div class="bg-ccr-light p-6 rounded-sharp border border-ccr-light">
+              <h3 class="text-sm font-semibold text-ccr-gold mb-2">PHONE</h3>
+              <a
+                href="tel:9132083171"
+                class="text-2xl font-bold text-ccr-navy hover:text-ccr-blue transition"
+              >
+                913-208-3171
+              </a>
+              <p class="text-xs text-ccr-gray mt-2">Mon-Fri: 8am-5pm | Sat: 9am-1pm</p>
+            </div>
+
+            <!-- Email Card -->
+            <div class="bg-ccr-light p-6 rounded-sharp border border-ccr-light">
+              <h3 class="text-sm font-semibold text-ccr-gold mb-2">EMAIL</h3>
+              <a
+                href="mailto:corsonconstructionllc@gmail.com"
+                class="text-lg font-bold text-ccr-navy hover:text-ccr-blue transition break-all"
+              >
+                corsonconstructionllc@gmail.com
+              </a>
+              <p class="text-xs text-ccr-gray mt-2">We respond within 24 hours</p>
+            </div>
+
+            <!-- Location Card -->
+            <div class="bg-ccr-light p-6 rounded-sharp border border-ccr-light">
+              <h3 class="text-sm font-semibold text-ccr-gold mb-2">LOCATION</h3>
+              <p class="text-lg font-bold text-ccr-navy">Gardner, KS 66030</p>
+              <p class="text-xs text-ccr-gray mt-2">Proudly serving Johnson County</p>
+            </div>
+          </div>
+
+          <!-- Prefer to Talk CTA -->
+          <div class="bg-ccr-navy text-white p-8 rounded-sharp">
+            <h3 class="text-xl font-bold mb-4">Prefer to Talk?</h3>
+            <p class="text-sm text-gray-300 mb-6">
+              Give us a call for immediate assistance. Our team is ready to help!
+            </p>
+            <a
+              href="tel:9132083171"
+              class="block w-full px-6 py-3 bg-ccr-gold text-ccr-navy font-bold text-center hover:bg-white transition text-lg"
+              style={{ borderRadius: '2px' }}
+            >
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
