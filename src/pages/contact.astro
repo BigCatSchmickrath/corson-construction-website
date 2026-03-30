@@ -2,11 +2,15 @@
 import Layout from '@/layouts/Layout.astro';
 ---
 
-<Layout title="Contact | Corson Construction & Roofing">
+<Layout title="Contact | Corson Construction">
   <!-- Page Hero Banner -->
-  <section class="bg-ccr-navy text-white py-12 px-4 sm:px-8">
-    <div class="max-w-6xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Get In Touch</h1>
+  <section class="relative text-white py-16 sm:py-32 px-4 sm:px-8 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/contacthero.jpg" alt="" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-ccr-navy/75"></div>
+    </div>
+    <div class="max-w-6xl mx-auto relative z-10">
+      <h1 class="text-3xl sm:text-5xl font-bold mb-3 sm:mb-4">Get In Touch</h1>
       <div class="flex items-center gap-2 text-sm">
         <a href="/" class="hover:text-ccr-gold transition">Home</a>
         <span class="text-ccr-gold">/</span>
@@ -16,14 +20,14 @@ import Layout from '@/layouts/Layout.astro';
   </section>
 
   <!-- Contact Section -->
-  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+  <section class="py-10 sm:py-24 px-4 sm:px-8 bg-white">
     <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
         <!-- Contact Form -->
-        <div class="lg:col-span-2">
-          <div class="mb-8">
-            <h2 class="text-3xl font-bold text-ccr-navy mb-2">Send us a Message</h2>
-            <p class="text-ccr-gray">We'll get back to you within 24 hours. All fields marked with * are required.</p>
+        <div class="lg:col-span-2 border border-gray-200 rounded-sharp p-5 sm:p-8 lg:p-10">
+          <div class="mb-6 sm:mb-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-ccr-navy mb-2">Send us a Message</h2>
+            <p class="text-sm sm:text-base text-ccr-gray">We'll get back to you within 24 hours. All fields marked with * are required.</p>
           </div>
 
           <form
@@ -31,7 +35,7 @@ import Layout from '@/layouts/Layout.astro';
             method="POST"
             data-netlify="true"
             action="/thank-you"
-            class="space-y-6"
+            class="space-y-5 sm:space-y-6"
             netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="contact" />
@@ -49,7 +53,7 @@ import Layout from '@/layouts/Layout.astro';
                 id="name"
                 name="name"
                 required
-                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition"
+                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition text-base"
                 placeholder="John Smith"
               />
             </div>
@@ -64,7 +68,7 @@ import Layout from '@/layouts/Layout.astro';
                 id="phone"
                 name="phone"
                 required
-                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition"
+                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition text-base"
                 placeholder="913-208-3171"
               />
             </div>
@@ -78,7 +82,7 @@ import Layout from '@/layouts/Layout.astro';
                 type="email"
                 id="email"
                 name="email"
-                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition"
+                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition text-base"
                 placeholder="your@email.com"
               />
             </div>
@@ -91,15 +95,15 @@ import Layout from '@/layouts/Layout.astro';
               <select
                 id="service"
                 name="service"
-                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition"
+                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition text-base"
               >
                 <option value="">-- Select a Service --</option>
-                <option value="Roofing">Roofing</option>
-                <option value="Kitchen Remodeling">Kitchen Remodeling</option>
-                <option value="Bathroom Remodeling">Bathroom Remodeling</option>
-                <option value="Decks & Patios">Decks & Patios</option>
                 <option value="Basement Finishing">Basement Finishing</option>
+                <option value="Decks & Patios">Decks & Patios</option>
+                <option value="Outdoor Living">Outdoor Living</option>
+                <option value="Bathroom Remodeling">Bathroom Remodeling</option>
                 <option value="Concrete & Fencing">Concrete & Fencing</option>
+                <option value="Custom Builds">Custom Builds</option>
                 <option value="Other">Other</option>
               </select>
             </div>
@@ -112,8 +116,8 @@ import Layout from '@/layouts/Layout.astro';
               <textarea
                 id="message"
                 name="message"
-                rows="6"
-                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition resize-none"
+                rows="5"
+                class="w-full px-4 py-3 border border-ccr-light rounded-sharp focus:outline-none focus:border-ccr-blue focus:ring-2 focus:ring-ccr-blue focus:ring-opacity-20 transition resize-none text-base"
                 placeholder="Tell us about your project..."
               ></textarea>
             </div>
@@ -121,7 +125,7 @@ import Layout from '@/layouts/Layout.astro';
             <!-- Submit Button -->
             <button
               type="submit"
-              class="w-full px-8 py-3 bg-ccr-blue text-white font-bold hover:bg-ccr-navy transition text-lg"
+              class="w-full px-8 py-3 bg-ccr-blue text-white font-bold hover:bg-ccr-navy transition text-base sm:text-lg"
               style={{ borderRadius: '2px' }}
             >
               Send Message
@@ -132,13 +136,13 @@ import Layout from '@/layouts/Layout.astro';
         <!-- Contact Info Sidebar -->
         <div class="lg:col-span-1">
           <!-- Contact Cards -->
-          <div class="space-y-6 mb-8">
+          <div class="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
             <!-- Phone Card -->
-            <div class="bg-ccr-light p-6 rounded-sharp border border-ccr-light">
+            <div class="bg-ccr-light p-4 sm:p-6 rounded-sharp border border-ccr-light">
               <h3 class="text-sm font-semibold text-ccr-gold mb-2">PHONE</h3>
               <a
                 href="tel:9132083171"
-                class="text-2xl font-bold text-ccr-navy hover:text-ccr-blue transition"
+                class="text-xl sm:text-2xl font-bold text-ccr-navy hover:text-ccr-blue transition"
               >
                 913-208-3171
               </a>
@@ -146,11 +150,11 @@ import Layout from '@/layouts/Layout.astro';
             </div>
 
             <!-- Email Card -->
-            <div class="bg-ccr-light p-6 rounded-sharp border border-ccr-light">
+            <div class="bg-ccr-light p-4 sm:p-6 rounded-sharp border border-ccr-light">
               <h3 class="text-sm font-semibold text-ccr-gold mb-2">EMAIL</h3>
               <a
                 href="mailto:corsonconstructionllc@gmail.com"
-                class="text-lg font-bold text-ccr-navy hover:text-ccr-blue transition break-all"
+                class="text-xs sm:text-sm font-bold text-ccr-navy hover:text-ccr-blue transition break-all"
               >
                 corsonconstructionllc@gmail.com
               </a>
@@ -158,22 +162,22 @@ import Layout from '@/layouts/Layout.astro';
             </div>
 
             <!-- Location Card -->
-            <div class="bg-ccr-light p-6 rounded-sharp border border-ccr-light">
+            <div class="bg-ccr-light p-4 sm:p-6 rounded-sharp border border-ccr-light">
               <h3 class="text-sm font-semibold text-ccr-gold mb-2">LOCATION</h3>
-              <p class="text-lg font-bold text-ccr-navy">Gardner, KS 66030</p>
+              <p class="text-base sm:text-lg font-bold text-ccr-navy">Gardner, KS 66030</p>
               <p class="text-xs text-ccr-gray mt-2">Proudly serving Johnson County</p>
             </div>
           </div>
 
           <!-- Prefer to Talk CTA -->
-          <div class="bg-ccr-navy text-white p-8 rounded-sharp">
-            <h3 class="text-xl font-bold mb-4">Prefer to Talk?</h3>
-            <p class="text-sm text-gray-300 mb-6">
+          <div class="bg-ccr-navy text-white p-5 sm:p-8 rounded-sharp">
+            <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Prefer to Talk?</h3>
+            <p class="text-sm text-gray-300 mb-4 sm:mb-6">
               Give us a call for immediate assistance. Our team is ready to help!
             </p>
             <a
               href="tel:9132083171"
-              class="block w-full px-6 py-3 bg-ccr-gold text-ccr-navy font-bold text-center hover:bg-white transition text-lg"
+              class="block w-full px-6 py-3 bg-ccr-gold text-ccr-navy font-bold text-center hover:bg-white transition text-base sm:text-lg"
               style={{ borderRadius: '2px' }}
             >
               Call Now

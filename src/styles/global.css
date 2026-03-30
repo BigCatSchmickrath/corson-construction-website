@@ -7,6 +7,18 @@
 body {
   font-family: 'Montserrat', sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Prevent iOS zoom on form focus */
+input, select, textarea {
+  font-size: 16px;
+}
+
+/* Improve tap highlight on mobile */
+a, button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom scrollbar styling */

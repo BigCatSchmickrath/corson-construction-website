@@ -3,30 +3,76 @@ import Layout from '@/layouts/Layout.astro';
 import { GalleryGrid } from '@/components/GalleryGrid';
 ---
 
-<Layout title="Gallery | Corson Construction & Roofing">
+<Layout title="Gallery | Corson Construction">
   <!-- Page Hero Banner -->
-  <section class="bg-ccr-navy text-white py-12 px-4 sm:px-8">
-    <div class="max-w-6xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Our Work</h1>
-      <div class="flex items-center gap-2 text-sm">
+  <section class="relative text-white py-16 sm:py-32 px-4 sm:px-8 overflow-hidden">
+    <img src="/images/deck.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-ccr-navy/80"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="flex items-center gap-2 text-sm mb-4">
         <a href="/" class="hover:text-ccr-gold transition">Home</a>
         <span class="text-ccr-gold">/</span>
-        <span class="text-ccr-light">Gallery</span>
+        <span class="text-gray-300">Gallery</span>
+      </div>
+      <h1 class="text-3xl sm:text-6xl font-black mb-3 sm:mb-4">Our Work</h1>
+      <p class="text-base sm:text-lg text-gray-300 max-w-2xl">
+        Real projects. Real craftsmanship. Browse our portfolio and imagine what we can build for you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="bg-white border-b border-ccr-light">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-3 divide-x divide-ccr-light py-4 sm:py-6">
+        <div class="text-center px-1">
+          <div class="text-xl sm:text-2xl font-bold text-ccr-navy">7+</div>
+          <div class="text-[10px] sm:text-xs text-ccr-gray uppercase tracking-wider">Completed Projects</div>
+        </div>
+        <div class="text-center px-1">
+          <div class="text-xl sm:text-2xl font-bold text-ccr-gold">4.4</div>
+          <div class="text-[10px] sm:text-xs text-ccr-gray uppercase tracking-wider">Google Rating</div>
+        </div>
+        <div class="text-center px-1">
+          <div class="text-xl sm:text-2xl font-bold text-ccr-navy">20+</div>
+          <div class="text-[10px] sm:text-xs text-ccr-gray uppercase tracking-wider">Years Experience</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Gallery Section -->
-  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+  <section class="py-10 sm:py-20 px-4 sm:px-8 bg-ccr-light">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <p class="text-lg text-ccr-gray max-w-2xl mx-auto">
-          Explore our portfolio of completed projects. Click any image to learn more about the details, materials, and craftsmanship that went into each renovation.
-        </p>
-      </div>
-
-      {/* Gallery Grid Component */}
       <GalleryGrid client:visible />
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="relative py-12 sm:py-20 px-4 sm:px-8 overflow-hidden">
+    <img src="/images/hero-bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-ccr-navy/80"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h2 class="text-2xl sm:text-4xl font-bold text-white mb-3 sm:mb-4">Like What You See?</h2>
+      <p class="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8">
+        Your project could be next. Let's talk about what you have in mind.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+        <a
+          href="/contact"
+          class="px-6 sm:px-8 py-3 bg-ccr-gold text-ccr-navy font-bold hover:bg-white transition text-base sm:text-lg"
+          style={{ borderRadius: '2px' }}
+        >
+          Get Your Free Estimate
+        </a>
+        <a
+          href="tel:9132083171"
+          class="px-6 sm:px-8 py-3 border-2 border-white text-white font-bold hover:bg-white hover:text-ccr-navy transition text-base sm:text-lg"
+          style={{ borderRadius: '2px' }}
+        >
+          Call: 913-208-3171
+        </a>
+      </div>
     </div>
   </section>
 </Layout>

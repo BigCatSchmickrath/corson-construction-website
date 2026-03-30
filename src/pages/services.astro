@@ -1,80 +1,199 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { services } from '@/data/services';
+
+const primaryServices = services.slice(0, 3);
+const secondaryServices = services.slice(3);
+
+const iconSvgs: Record<string, string> = {
+  Building2: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5M3.75 21V6.75L9 3.75v17.25M9 21V10.5l6-3v13.5M15 21V9l5.25-2.25V21" /></svg>`,
+  Home: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12L12 2.25 21.75 12M4.5 9.75V19.5a.75.75 0 00.75.75H9V14.25h6v6h3.75a.75.75 0 00.75-.75V9.75" /></svg>`,
+  Hammer: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.048.58.024 1.194-.14 1.743" /></svg>`,
+  Droplets: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a8.25 8.25 0 006.222-13.666L12 .75 5.778 7.334A8.25 8.25 0 0012 21z" /></svg>`,
+  Layers: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L12 12.75 6.429 9.75m11.142 0l4.179 2.25L12 17.25 2.25 12l4.179-2.25m11.142 0l4.179 2.25L12 22.5 2.25 17.25l4.179-2.25" /></svg>`,
+  Utensils: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.048.58.024 1.194-.14 1.743" /></svg>`,
+};
+
+const serviceImages: Record<string, string> = {
+  basement: '/images/basement.jpg',
+  decks: '/images/deck.jpg',
+  outdoor: '/images/pavilion.jpg',
+  bathroom: '/images/bathroom.jpg',
+  concrete: '/images/concrete-pad.jpg',
+  custom: '/images/outbuilding.jpg',
+};
 ---
 
-<Layout title="Services | Corson Construction & Roofing">
+<Layout title="Services | Corson Construction">
   <!-- Page Hero Banner -->
-  <section class="bg-ccr-navy text-white py-12 px-4 sm:px-8">
-    <div class="max-w-6xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Our Services</h1>
-      <div class="flex items-center gap-2 text-sm">
+  <section class="relative text-white py-16 sm:py-32 px-4 sm:px-8 overflow-hidden">
+    <img src="/images/pavilion.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-ccr-navy/80"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="flex items-center gap-2 text-sm mb-4">
         <a href="/" class="hover:text-ccr-gold transition">Home</a>
         <span class="text-ccr-gold">/</span>
-        <span class="text-ccr-light">Services</span>
+        <span class="text-gray-300">Services</span>
+      </div>
+      <h1 class="text-3xl sm:text-6xl font-black mb-3 sm:mb-4">Our Services</h1>
+      <p class="text-base sm:text-lg text-gray-300 max-w-2xl">
+        From custom basements to outdoor living spaces, we offer comprehensive home improvement services tailored to your needs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Primary Services — Large Feature Cards -->
+  <section class="py-12 sm:py-24 px-4 sm:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-10 sm:mb-16">
+        <span class="text-ccr-gold font-semibold text-sm tracking-widest uppercase">What We Do Best</span>
+        <h2 class="text-2xl sm:text-4xl font-bold text-ccr-navy mt-2">Our Specialties</h2>
+      </div>
+
+      <div class="space-y-12 sm:space-y-16">
+        {primaryServices.map((service, index) => (
+          <div class={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-6 lg:gap-12 items-center`}>
+            <div class="lg:w-1/2 w-full">
+              <div class="relative overflow-hidden rounded-sharp">
+                <img
+                  src={serviceImages[service.id]}
+                  alt={service.title}
+                  class="w-full h-56 sm:h-80 object-cover"
+                />
+                <div class="absolute top-4 left-4 bg-ccr-gold text-ccr-navy text-xs font-bold px-3 py-1 uppercase tracking-wider">
+                  Featured
+                </div>
+              </div>
+            </div>
+            <div class="lg:w-1/2 w-full">
+              <div class="flex items-center gap-3 mb-3 sm:mb-4">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-ccr-blue text-white rounded-sharp flex items-center justify-center flex-shrink-0">
+                  <Fragment set:html={iconSvgs[service.icon]} />
+                </div>
+                <h3 class="text-xl sm:text-3xl font-bold text-ccr-navy">{service.title}</h3>
+              </div>
+              <p class="text-ccr-gray text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">{service.description}</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                {service.features.map((feature) => (
+                  <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 bg-ccr-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-ccr-gold text-xs font-bold">✓</span>
+                    </div>
+                    <span class="text-sm font-medium text-ccr-navy">{feature}</span>
+                  </div>
+                ))}
+              </div>
+              <a
+                href="/contact"
+                class="inline-block mt-6 sm:mt-8 px-6 py-3 bg-ccr-blue text-white font-semibold hover:bg-ccr-navy transition"
+                style={{ borderRadius: '2px' }}
+              >
+                Get a Quote →
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Services Grid -->
-  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
-    <div class="max-w-6xl mx-auto mb-12">
-      <p class="text-center text-lg text-ccr-gray max-w-3xl mx-auto mb-12">
-        From roofing to remodeling, we offer comprehensive construction services tailored to your home's needs. With 20+ years of experience, quality is guaranteed on every project.
-      </p>
+  <!-- Secondary Services — Compact Cards -->
+  <section class="py-12 sm:py-20 px-4 sm:px-8 bg-ccr-light">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-8 sm:mb-12">
+        <span class="text-ccr-gold font-semibold text-sm tracking-widest uppercase">And More</span>
+        <h2 class="text-2xl sm:text-4xl font-bold text-ccr-navy mt-2">Additional Services</h2>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {
-          services.map((service) => (
-            <div
-              class="bg-white border border-ccr-light rounded-sharp p-8 hover:shadow-lg transition group cursor-pointer"
-              style={{
-                borderBottom: '3px solid transparent',
-              }}
-              onmouseenter="this.style.borderBottomColor = '#2c5f8a'"
-              onmouseleave="this.style.borderBottomColor = 'transparent'"
-            >
-              <div class="w-12 h-12 bg-ccr-light rounded-sharp flex items-center justify-center mb-6 group-hover:bg-ccr-blue group-hover:text-white transition text-2xl">
-                {service.icon === 'Hammer' && '🔨'}
-                {service.icon === 'Utensils' && '🍽️'}
-                {service.icon === 'Droplets' && '💧'}
-                {service.icon === 'Home' && '🏠'}
-                {service.icon === 'Building2' && '🏢'}
-                {service.icon === 'Layers' && '📦'}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        {secondaryServices.map((service) => (
+          <div class="bg-white rounded-sharp overflow-hidden shadow-sm hover:shadow-lg transition group">
+            <div class="relative h-40 sm:h-48 overflow-hidden">
+              <img
+                src={serviceImages[service.id]}
+                alt={service.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-ccr-navy/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <h3 class="text-lg sm:text-xl font-bold text-white">{service.title}</h3>
               </div>
-
-              <h3 class="text-2xl font-bold text-ccr-navy mb-3">{service.title}</h3>
-              <p class="text-ccr-gray mb-6 leading-relaxed">{service.description}</p>
-
+            </div>
+            <div class="p-4 sm:p-6">
+              <p class="text-ccr-gray text-sm leading-relaxed mb-4">{service.description}</p>
               <div class="space-y-2">
                 {service.features.map((feature) => (
-                  <div class="flex items-start gap-2">
-                    <span class="text-ccr-gold font-bold mt-1">✓</span>
-                    <span class="text-sm text-ccr-gray">{feature}</span>
+                  <div class="flex items-center gap-2">
+                    <span class="text-ccr-gold text-xs">●</span>
+                    <span class="text-xs font-medium text-ccr-navy">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
-          ))
-        }
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-12 sm:py-20 px-4 sm:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-8 sm:mb-12">
+        <span class="text-ccr-gold font-semibold text-sm tracking-widest uppercase">How It Works</span>
+        <h2 class="text-2xl sm:text-4xl font-bold text-ccr-navy mt-2">Our Process</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+        <div class="text-center">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-ccr-navy text-white rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl font-bold">1</div>
+          <h3 class="font-bold text-ccr-navy mb-1 sm:mb-2 text-sm sm:text-base">Free Consultation</h3>
+          <p class="text-xs sm:text-sm text-ccr-gray">Tell us about your project and we'll visit your home to discuss options.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-ccr-navy text-white rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl font-bold">2</div>
+          <h3 class="font-bold text-ccr-navy mb-1 sm:mb-2 text-sm sm:text-base">Detailed Estimate</h3>
+          <p class="text-xs sm:text-sm text-ccr-gray">Receive a transparent, no-pressure estimate with clear pricing.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-ccr-navy text-white rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl font-bold">3</div>
+          <h3 class="font-bold text-ccr-navy mb-1 sm:mb-2 text-sm sm:text-base">Expert Build</h3>
+          <p class="text-xs sm:text-sm text-ccr-gray">Our experienced team brings your vision to life with quality craftsmanship.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-ccr-gold text-ccr-navy rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl font-bold">4</div>
+          <h3 class="font-bold text-ccr-navy mb-1 sm:mb-2 text-sm sm:text-base">Final Walkthrough</h3>
+          <p class="text-xs sm:text-sm text-ccr-gray">We walk you through every detail to make sure you love the finished product.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-16 sm:py-20 px-4 sm:px-8 bg-ccr-light">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-ccr-navy mb-6">Ready to Start Your Project?</h2>
-      <p class="text-lg text-ccr-gray mb-8 max-w-2xl mx-auto">
+  <section class="relative py-16 sm:py-24 px-4 sm:px-8 overflow-hidden">
+    <img src="/images/hero-bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-ccr-navy/80"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h2 class="text-2xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">Ready to Start Your Project?</h2>
+      <p class="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
         Contact us today for a free consultation and estimate. Our team is ready to bring your vision to life.
       </p>
-      <a
-        href="/contact"
-        class="inline-block px-8 py-3 bg-ccr-blue text-white font-bold hover:bg-ccr-navy transition text-lg"
-        style={{ borderRadius: '2px' }}
-      >
-        Get Your Free Estimate
-      </a>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+        <a
+          href="/contact"
+          class="px-6 sm:px-8 py-3 bg-ccr-gold text-ccr-navy font-bold hover:bg-white transition text-base sm:text-lg"
+          style={{ borderRadius: '2px' }}
+        >
+          Get Your Free Estimate
+        </a>
+        <a
+          href="tel:9132083171"
+          class="px-6 sm:px-8 py-3 border-2 border-white text-white font-bold hover:bg-white hover:text-ccr-navy transition text-base sm:text-lg"
+          style={{ borderRadius: '2px' }}
+        >
+          Call: 913-208-3171
+        </a>
+      </div>
     </div>
   </section>
 </Layout>
