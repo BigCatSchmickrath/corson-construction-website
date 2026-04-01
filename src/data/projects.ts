@@ -175,64 +175,55 @@ export const projects: Project[] = [
     image: '/images/deck-patio-combo.jpg',
   },
 
-  // === BATHROOMS ===
+  // === SHOWERS & TILE ===
   {
     id: '6',
-    title: 'Spa Bathroom Renovation',
-    category: 'Bathroom',
-    tagline: 'Your personal retreat at home',
-    description: 'Start and end every day in a bathroom that feels like a spa.',
+    title: 'Custom Tub Surround & Tile Backsplash',
+    category: 'Showers & Tile',
+    tagline: 'Detailed tile work around a jetted tub',
+    description: 'Hexagonal marble tile backsplash, custom wood panel surround, and glass block window — precision tile work that elevates the entire bathroom.',
     image: '/images/bathroom.jpg',
   },
   {
-    id: 'ba1',
-    title: 'Modern Subway Tile Bathroom',
-    category: 'Bathroom',
-    tagline: 'Clean, bright, and contemporary',
-    description:
-      "White subway tile shower with frameless glass door, marble vanity countertop, and a bold blue accent wall. A complete transformation that feels fresh every morning.",
-    image: '/images/bathroom-subway-tile.jpg',
-  },
-  {
     id: 'ba2',
-    title: 'Geometric Floor Tile Bathroom',
-    category: 'Bathroom',
-    tagline: 'Statement flooring that turns heads',
+    title: 'Marble Tile Shower with Accent Strip',
+    category: 'Showers & Tile',
+    tagline: 'Large format tile with decorative detail',
     description:
-      "Striking black and white geometric floor tile, tall rectangular vanity, and modern fixtures create an upscale spa-like atmosphere with bold contemporary style.",
+      "Gray marble-look large format tile with a mosaic accent strip, recessed niche, and matte black rain shower head. Clean lines and quality craftsmanship throughout.",
     image: '/images/bathroom-geometric-floor.jpg',
   },
   {
     id: 'ba3',
-    title: 'Black Accent Tile Bathroom',
-    category: 'Bathroom',
-    tagline: 'Timeless design with bold accents',
+    title: 'Geometric Pattern Floor Tile',
+    category: 'Showers & Tile',
+    tagline: 'Statement flooring that turns heads',
     description:
-      "White subway tile with a black accent stripe, herringbone floor tile, and brushed black fixtures — a sophisticated contrast that never goes out of style.",
+      "Striking black and white ornate patterned floor tile paired with classic white subway tile walls and a marble vanity top. Bold design with timeless appeal.",
     image: '/images/bathroom-black-accent.jpg',
   },
   {
     id: 'ba4',
-    title: 'Spa-Inspired Walk-In Shower',
-    category: 'Bathroom',
-    tagline: 'Luxury in a compact footprint',
+    title: 'Glass Door Shower Remodel',
+    category: 'Showers & Tile',
+    tagline: 'Clean and modern shower upgrade',
     description:
-      "Gray and white palette, spacious walk-in shower with frameless glass, and floating vanity. Proof that even smaller bathrooms can feel luxurious.",
+      "Sliding glass door shower enclosure with built-in shelving, new vanity, and updated fixtures. A practical, polished shower remodel from top to bottom.",
     image: '/images/spa-bathroom.jpg',
   },
   {
     id: 'ba5',
-    title: 'Contemporary Dark Vanity Bath',
-    category: 'Bathroom',
-    tagline: 'Sophisticated and efficient',
+    title: 'Herringbone Floor Tile & Dark Vanity',
+    category: 'Showers & Tile',
+    tagline: 'Sophisticated tile pattern work',
     description:
-      "Dark vanity cabinetry with chrome hardware, herringbone floor tile, and a clean neutral palette. Modern design that maximizes every square foot.",
+      "Dark herringbone floor tile, dark vanity cabinetry with chrome hardware, and marble countertop — a refined tile installation that anchors the entire room.",
     image: '/images/bathroom-dark-vanity.jpg',
   },
   {
     id: 'ba6',
-    title: 'Minimalist Shower Surround',
-    category: 'Bathroom',
+    title: 'Subway Tile Shower Surround',
+    category: 'Showers & Tile',
     tagline: 'Clean lines, quality tile work',
     description:
       "Light gray subway tile with a recessed niche and matching floor tile. Simple, clean, and built to last — the kind of quality you can see in every grout line.",
@@ -240,12 +231,21 @@ export const projects: Project[] = [
   },
   {
     id: 'ba7',
-    title: 'Compact Navy Accent Bathroom',
-    category: 'Bathroom',
+    title: 'Navy Accent Wall & Vanity Install',
+    category: 'Showers & Tile',
     tagline: 'Big impact in a small space',
     description:
-      "Floating vanity, bold navy accent wall, and smart fixture placement — this compact bathroom proves that great design has nothing to do with square footage.",
+      "Bold navy accent wall, floating white vanity with black hardware, and pendant lighting — a compact space with a complete facelift.",
     image: '/images/bathroom-navy-accent.jpg',
+  },
+  {
+    id: 'ba8',
+    title: 'Square Tile Shower with Niche',
+    category: 'Showers & Tile',
+    tagline: 'Classic tile in a bold setting',
+    description:
+      "White square tile shower surround with recessed niche, oil-rubbed bronze fixtures, and a teal accent wall. Timeless tile work with a pop of color.",
+    image: '/images/bathroom-pink-tile.jpg',
   },
 
   // === CONCRETE ===

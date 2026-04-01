@@ -30,9 +30,9 @@ export const services: Service[] = [
   },
   {
     id: 'bathroom',
-    title: 'Bathroom Remodeling',
-    description: 'Create your spa-like bathroom retreat with updated fixtures, tiling, and layouts tailored to your style.',
-    features: ['Vanities', 'Tile Work', 'Fixtures', 'Lighting'],
+    title: 'Showers & Tile',
+    description: 'From shower remodels to backsplashes and custom tile work, we deliver precision installations that transform any space.',
+    features: ['Shower Remodels', 'Tile Installation', 'Backsplashes', 'Custom Tile Patterns'],
     icon: 'Droplets',
   },
   {
