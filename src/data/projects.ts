@@ -57,7 +57,7 @@ export const projects: Project[] = [
   },
   {
     id: 'ol1',
-    title: 'Wooden Covered Patio',
+    title: 'Outdoor Entertainment Patio',
     category: 'Outdoor Living',
     tagline: 'Spacious entertaining under a solid roof',
     description:
@@ -75,7 +75,7 @@ export const projects: Project[] = [
   },
   {
     id: 'ol3',
-    title: 'Backyard Pavilion',
+    title: 'Screened Veranda',
     category: 'Outdoor Living',
     tagline: 'Built to last through every Kansas season',
     description:
@@ -93,7 +93,7 @@ export const projects: Project[] = [
   },
   {
     id: 'ol5',
-    title: 'Screened Deck with Wood Finishes',
+    title: 'Wooden Patio Shelter',
     category: 'Outdoor Living',
     tagline: 'All-season outdoor retreat',
     description:
@@ -122,7 +122,7 @@ export const projects: Project[] = [
   },
   {
     id: 'd1',
-    title: 'Multi-Level Deck with Pergola',
+    title: 'Modern Covered Deck',
     category: 'Decks',
     tagline: 'Elegant outdoor living with stunning views',
     description:
@@ -157,17 +157,8 @@ export const projects: Project[] = [
     image: '/images/composite-deck-steps.jpg',
   },
   {
-    id: 'd5',
-    title: 'Two-Story Deck Structure',
-    category: 'Decks',
-    tagline: 'Double the outdoor living',
-    description:
-      "Impressive two-story deck with external staircase, upper and lower levels, and quality railings. Maximizes your outdoor footprint on a multi-level home.",
-    image: '/images/two-story-deck.jpg',
-  },
-  {
     id: 'd6',
-    title: 'Deck and Patio Combination',
+    title: 'Wooden Deck with Metal Balusters',
     category: 'Decks',
     tagline: 'Complete backyard transformation',
     description:
