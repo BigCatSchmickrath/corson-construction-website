@@ -131,7 +131,7 @@ export const projects: Project[] = [
   },
   {
     id: 'd2',
-    title: 'Screened Deck with Glass Doors',
+    title: 'Screened Deck',
     category: 'Decks',
     tagline: 'Premium screening for your deck',
     description:
