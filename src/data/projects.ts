@@ -34,7 +34,7 @@ export const projects: Project[] = [
     tagline: 'Professional entertainment space below grade',
     description:
       "Cove ceiling lighting, recessed fixtures, carpet, and walls prepped for your dream home theater setup. This basement went from empty concrete to premium entertainment space.",
-    image: '/images/basement-media-room.jpg',
+    image: '/images/theater_room.jpg',
   },
 
   // === OUTDOOR LIVING ===
@@ -237,6 +237,15 @@ export const projects: Project[] = [
     description:
       "White square tile shower surround with recessed niche, oil-rubbed bronze fixtures, and a teal accent wall. Timeless tile work with a pop of color.",
     image: '/images/bathroom-pink-tile.jpg',
+  },
+  {
+    id: 'ba9',
+    title: 'Custom Kitchen Backsplash',
+    category: 'Showers & Tile',
+    tagline: 'Statement tile that transforms the space',
+    description:
+      "Gold-toned decorative tile backsplash with precision cuts around cabinetry and outlets — detailed tile work that turns a kitchen wall into a showpiece.",
+    image: '/images/backsplash.jpg',
   },
 
   // === CONCRETE ===
